@@ -2,8 +2,8 @@ package com.online.ordering.system.domain.valueobject;
 
 import java.util.UUID;
 
-public class ProductID extends BaseId<UUID> {
-    public ProductID(UUID value) {
+public class ProductId extends BaseId<UUID> {
+    public ProductId(UUID value) {
         super(value);
     }
 }

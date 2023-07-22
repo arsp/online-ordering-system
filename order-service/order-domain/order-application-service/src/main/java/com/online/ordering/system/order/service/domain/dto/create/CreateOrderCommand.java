@@ -1,6 +1,5 @@
 package com.online.ordering.system.order.service.domain.dto.create;
 
-import com.online.ordering.system.order.service.domain.entity.OrderItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

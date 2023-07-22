@@ -11,7 +11,7 @@ import java.util.UUID;
 @Getter
 @Builder
 @AllArgsConstructor
-public class OrderItems {
+public class OrderItem {
     @NonNull
     private final UUID productId;
     @NonNull
