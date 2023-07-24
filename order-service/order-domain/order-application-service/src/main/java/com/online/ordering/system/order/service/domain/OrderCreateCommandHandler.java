@@ -2,7 +2,6 @@ package com.online.ordering.system.order.service.domain;
 
 import com.online.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import com.online.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
-import com.online.ordering.system.order.service.domain.dto.create.OrderItem;
 import com.online.ordering.system.order.service.domain.entity.Customer;
 import com.online.ordering.system.order.service.domain.entity.Order;
 import com.online.ordering.system.order.service.domain.entity.Shop;
@@ -29,16 +28,19 @@ public class OrderCreateCommandHandler {
     private final ShopRepository shopRepository;
     private final OrderDataMapper orderDataMapper;
 
+    private final ApplicationDomainEventPublisher applicationDomainEventPublisher;
+
     public OrderCreateCommandHandler(OrderDomainService orderDomainService,
                                      OrderRepository orderRepository,
                                      CustomerRepository customerRepository,
                                      ShopRepository shopRepository,
-                                     OrderDataMapper orderDataMapper) {
+                                     OrderDataMapper orderDataMapper, ApplicationDomainEventPublisher applicationDomainEventPublisher) {
         this.orderDomainService = orderDomainService;
         this.orderRepository = orderRepository;
         this.customerRepository = customerRepository;
         this.shopRepository = shopRepository;
         this.orderDataMapper = orderDataMapper;
+        this.applicationDomainEventPublisher = applicationDomainEventPublisher;
     }
 
 
@@ -50,6 +52,7 @@ public class OrderCreateCommandHandler {
         OrderCreatedEvent orderCreatedEvent = orderDomainService.validateAndInitiateOrder(order, shop);
         Order orderResult = saveOrder(order);
         log.info("Order is created with id: {}",orderResult.getId().getValue());
+        applicationDomainEventPublisher.publish(orderCreatedEvent);
         return orderDataMapper.orderToCreateOrderResponse(order);
 
     }
