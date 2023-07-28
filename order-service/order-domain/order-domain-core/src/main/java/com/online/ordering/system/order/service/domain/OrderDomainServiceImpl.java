@@ -57,7 +57,7 @@ public class OrderDomainServiceImpl implements OrderDomainService{
     private void validateShop(Shop shop) {
         if(!shop.isActive()) {
             throw new OrderDomainException("Shop with id: "+ shop.getId().getValue() +
-                        "is currently not active");
+                        " is currently not active!");
         }
     }
     private void setOrderProductInformation(Order order, Shop shop) {
