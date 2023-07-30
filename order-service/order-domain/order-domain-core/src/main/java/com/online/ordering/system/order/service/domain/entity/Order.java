@@ -18,6 +18,8 @@ public class Order extends AggregateRoot<OrderId> {
     private final Money price;
     private final List<OrderItem> items;
 
+    public static final String FAILURE_MESSAGE_DELIMITER = ",";
+
     /**
      * these three fields are not final because
      * I will set them during business logic after creating the order entity,
@@ -247,7 +249,7 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder status(OrderStatus val) {
+        public Builder orderStatus(OrderStatus val) {
             orderStatus = val;
             return this;
         }

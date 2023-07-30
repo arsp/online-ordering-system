@@ -20,7 +20,7 @@
         <module>order-service</module>
         <module>common</module>
         <module>infrastructure</module>
-        <module>infrastructure/kafka</module>
+        <module>common/common-application</module>
     </modules>
 
     <properties>
@@ -64,6 +64,11 @@
             <dependency>
                 <groupId>com.online.ordering.system</groupId>
                 <artifactId>common-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.online.ordering.system</groupId>
+                <artifactId>common-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
