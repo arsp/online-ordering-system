@@ -13,7 +13,14 @@ replay_pid*
 ##############################
 ## Maven
 ##############################
-target/
+/order-service/order-domain/order-domain-core/target/
+/order-service/order-container/target/
+/order-service/order-domain/order-application-service/target/
+/order-service/order-messaging/target/
+/order-service/order-dataaccess/target/
+/order-service/order-application/target/
+/common/common-application/target/
+/common/common-domain/target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
