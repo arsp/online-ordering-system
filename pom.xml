@@ -21,6 +21,7 @@
         <module>common</module>
         <module>infrastructure</module>
         <module>common/common-application</module>
+        <module>customer-service</module>
     </modules>
 
     <properties>
@@ -31,7 +32,6 @@
         <spring-kafka.version>3.0.9</spring-kafka.version>
         <kafka-avro-serializer.version>7.4.0</kafka-avro-serializer.version>
         <avro.version>1.11.2</avro.version>
-        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -122,11 +122,6 @@
                 <configuration>
                     <release>17</release>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>com.github.ferstl</groupId>

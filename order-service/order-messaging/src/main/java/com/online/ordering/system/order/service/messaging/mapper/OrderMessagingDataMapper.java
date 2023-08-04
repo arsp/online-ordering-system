@@ -78,16 +78,16 @@ public class OrderMessagingDataMapper {
 
     public ShopApprovalResponse
     approvalResponseAvroModelToApprovalResponse(ShopApprovalResponseAvroModel
-                                                        restaurantApprovalResponseAvroModel) {
+                                                        shopApprovalResponseAvroModel) {
         return ShopApprovalResponse.builder()
-                .id(restaurantApprovalResponseAvroModel.getId().toString())
-                .sagaId(restaurantApprovalResponseAvroModel.getSagaId().toString())
-                .shopId(restaurantApprovalResponseAvroModel.getShopId().toString())
-                .orderId(restaurantApprovalResponseAvroModel.getOrderId().toString())
-                .createdAt(restaurantApprovalResponseAvroModel.getCreatedAt())
+                .id(shopApprovalResponseAvroModel.getId().toString())
+                .sagaId(shopApprovalResponseAvroModel.getSagaId().toString())
+                .shopId(shopApprovalResponseAvroModel.getShopId().toString())
+                .orderId(shopApprovalResponseAvroModel.getOrderId().toString())
+                .createdAt(shopApprovalResponseAvroModel.getCreatedAt())
                 .orderApprovalStatus(com.online.ordering.system.domain.valueobject.OrderApprovalStatus.valueOf(
-                        restaurantApprovalResponseAvroModel.getOrderApprovalStatus().name()))
-                .failureMessages(restaurantApprovalResponseAvroModel.getFailureMessages())
+                        shopApprovalResponseAvroModel.getOrderApprovalStatus().name()))
+                .failureMessages(shopApprovalResponseAvroModel.getFailureMessages())
                 .build();
     }
 

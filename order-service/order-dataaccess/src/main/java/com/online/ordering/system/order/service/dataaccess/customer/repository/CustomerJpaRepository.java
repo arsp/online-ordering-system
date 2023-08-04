@@ -1,7 +1,6 @@
-package com.online.ordering.system.order.service.dataaccess.customer.respository;
+package com.online.ordering.system.order.service.dataaccess.customer.repository;
 
 import com.online.ordering.system.order.service.dataaccess.customer.entity.CustomerEntity;
-import com.online.ordering.system.order.service.domain.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

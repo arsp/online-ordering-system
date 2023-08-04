@@ -1,4 +1,4 @@
-package com.online.ordering.system.order.service.dataaccess.shop.respository;
+package com.online.ordering.system.order.service.dataaccess.shop.repository;
 
 import com.online.ordering.system.order.service.dataaccess.shop.entity.ShopEntity;
 import com.online.ordering.system.order.service.dataaccess.shop.entity.ShopEntityId;

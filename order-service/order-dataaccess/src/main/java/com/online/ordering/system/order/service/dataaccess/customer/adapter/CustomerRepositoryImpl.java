@@ -1,7 +1,7 @@
 package com.online.ordering.system.order.service.dataaccess.customer.adapter;
 
 import com.online.ordering.system.order.service.dataaccess.customer.mapper.CustomerDataAccessMapper;
-import com.online.ordering.system.order.service.dataaccess.customer.respository.CustomerJpaRepository;
+import com.online.ordering.system.order.service.dataaccess.customer.repository.CustomerJpaRepository;
 import com.online.ordering.system.order.service.domain.entity.Customer;
 import com.online.ordering.system.order.service.domain.ports.output.repository.CustomerRepository;
 import org.springframework.stereotype.Component;

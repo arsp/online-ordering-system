@@ -1,7 +1,7 @@
 package com.online.ordering.system.order.service.dataaccess.order.adapter;
 
 import com.online.ordering.system.order.service.dataaccess.order.mapper.OrderDataAccessMapper;
-import com.online.ordering.system.order.service.dataaccess.order.respository.OrderJpaRepository;
+import com.online.ordering.system.order.service.dataaccess.order.repository.OrderJpaRepository;
 import com.online.ordering.system.order.service.domain.entity.Order;
 import com.online.ordering.system.order.service.domain.ports.output.repository.OrderRepository;
 import com.online.ordering.system.order.service.domain.valueobject.TrackingId;

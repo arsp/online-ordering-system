@@ -2,7 +2,7 @@ package com.online.ordering.system.order.service.dataaccess.shop.adapter;
 
 import com.online.ordering.system.order.service.dataaccess.shop.entity.ShopEntity;
 import com.online.ordering.system.order.service.dataaccess.shop.mapper.ShopDataAccessMapper;
-import com.online.ordering.system.order.service.dataaccess.shop.respository.ShopJpaRepository;
+import com.online.ordering.system.order.service.dataaccess.shop.repository.ShopJpaRepository;
 import com.online.ordering.system.order.service.domain.entity.Shop;
 import com.online.ordering.system.order.service.domain.ports.output.repository.ShopRepository;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.online.ordering.system.order.service.dataaccess.order.respository;
+package com.online.ordering.system.order.service.dataaccess.order.repository;
 
 import com.online.ordering.system.order.service.dataaccess.order.entity.OrderEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

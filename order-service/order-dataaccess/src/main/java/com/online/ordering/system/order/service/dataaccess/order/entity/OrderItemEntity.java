@@ -3,6 +3,7 @@ package com.online.ordering.system.order.service.dataaccess.order.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.UUID;
@@ -15,11 +16,11 @@ import java.util.UUID;
 @IdClass(OrderItemEntity.class)
 @Table(name = "order_items")
 @Entity
-public class OrderItemEntity {
+public class OrderItemEntity implements Serializable {
     @Id
     private Long id;
     @Id
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ORDER_ID")
     private OrderEntity order;
 

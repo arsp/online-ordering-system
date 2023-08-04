@@ -130,7 +130,7 @@ public class OrderApplicationServiceTest {
         customer.setId(new CustomerId(CUSTOMER_ID));
 
 
-        Shop restaurantResponse = Shop.builder()
+        Shop shopResponse = Shop.builder()
                 .shopId(new ShopId(createOrderCommand.getShopId()))
                 .products(List.of(new Product(new ProductId(PRODUCT_ID), "product-1", new Money(new BigDecimal("50.00"))),
                         new Product(new ProductId(PRODUCT_ID), "product-2", new Money(new BigDecimal("50.00")))))
@@ -142,7 +142,7 @@ public class OrderApplicationServiceTest {
 
         when(customerRepository.findCustomers(CUSTOMER_ID)).thenReturn(Optional.of(customer));
         when(shopRepository.findShopInformation(orderDataMapper.createOrderCommandToShop(createOrderCommand)))
-                .thenReturn(Optional.of(restaurantResponse));
+                .thenReturn(Optional.of(shopResponse));
         when(orderRepository.save(any(Order.class))).thenReturn(order);
     }
 
@@ -171,14 +171,14 @@ public class OrderApplicationServiceTest {
 
     @Test
     public void testCreateOrderWithPassiveShop() {
-        Shop restaurantResponse = Shop.builder()
+        Shop shopResponse = Shop.builder()
                 .shopId(new ShopId(createOrderCommand.getShopId()))
                 .products(List.of(new Product(new ProductId(PRODUCT_ID), "product-1", new Money(new BigDecimal("50.00"))),
                         new Product(new ProductId(PRODUCT_ID), "product-2", new Money(new BigDecimal("50.00")))))
                 .active(false)
                 .build();
         when(shopRepository.findShopInformation(orderDataMapper.createOrderCommandToShop(createOrderCommand)))
-                .thenReturn(Optional.of(restaurantResponse));
+                .thenReturn(Optional.of(shopResponse));
         OrderDomainException orderDomainException = assertThrows(OrderDomainException.class,
                 () -> orderApplicationService.createOrder(createOrderCommand));
         assertEquals("Shop with id: " + SHOP_ID + " is currently not active!", orderDomainException.getMessage());
