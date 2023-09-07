@@ -1,9 +1,16 @@
 server:
   port: 8181
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
 logging:
   level:
     com.online.ordering.system: DEBUG
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
 
 order-service:
   payment-request-topic-name: payment-request
@@ -15,6 +22,8 @@ order-service:
   outbox-scheduler-initial-delay: 10000
 
 spring:
+  application:
+    name: order-service
   jpa:
     open-in-view: false
     show-sql: true
